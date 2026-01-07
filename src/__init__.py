@@ -43,13 +43,13 @@ register_exception_handlers(app)
 # Middleware Registration
 # ========================
 
-# 2️⃣ IP + Country whitelisting (runs first)
-# app.add_middleware(
-#     IPWhitelist,
-#     allowed_ips=["*"],     # Directly allowed IPs
-#     allowed_countries=["GH","US"],      # ISO country code for Ghana
-#     geoip_db_path=GEOIP_DB_PATH    # Local GeoIP DB (absolute path)
-# )
+#2️⃣ IP + Country whitelisting (runs first)
+app.add_middleware(
+   IPWhitelist,
+   allowed_ips=["*"],     # Directly allowed IPs
+   allowed_countries=["GH","US"],      # ISO country code for Ghana
+    geoip_db_path=GEOIP_DB_PATH    # Local GeoIP DB (absolute path)
+)
 
 # 3️⃣ CORS validation (runs after whitelist check)
 app.middleware("http")(cors_validation_middleware)

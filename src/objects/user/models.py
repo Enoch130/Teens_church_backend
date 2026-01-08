@@ -8,7 +8,7 @@ class User(UUIDModel, TimestampedModel):
     middleName:Mapped[str] = mapped_column(String, nullable=True)
     lastName:Mapped[str] = mapped_column(String)
     email:Mapped[str] = mapped_column(String,unique=True, index = True)
-    phoneNumber:Mapped[str] = mapped_column(String,nullable=True)
+    phoneNumber:Mapped[str] = mapped_column(String)
     password:Mapped[str] = mapped_column(String)
     role:Mapped[str] = mapped_column(String)
     

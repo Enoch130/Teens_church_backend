@@ -4,9 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID as pgUUID
 from sqlalchemy.orm import Mapped, mapped_column
 
 class User(UUIDModel, TimestampedModel):
-    firstName:Mapped[str] = mapped_column(String)
-    middleName:Mapped[str] = mapped_column(String, nullable=True)
-    lastName:Mapped[str] = mapped_column(String)
+    name:Mapped[str] = mapped_column(String)
     email:Mapped[str] = mapped_column(String,unique=True, index = True)
     phoneNumber:Mapped[str] = mapped_column(String)
     password:Mapped[str] = mapped_column(String)
